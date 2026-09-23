@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es" data-mode="standard">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica Visual | Aprender Código</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lecciones.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+    <!-- Panel de Accesibilidad -->
+    <div class="a11y-fab" id="a11yFab">
+        <button class="a11y-fab-btn" id="a11yToggle" aria-label="Panel de accesibilidad">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="4.5" r="2.5"/><path d="M12 7v10m0 0l-3.5 4.5m3.5-4.5l3.5 4.5M7 11.5h10"/></svg>
+        </button>
+        <div class="a11y-panel" id="a11yPanel">
+            <div class="a11y-panel-header"><span>Adaptación Sensorial</span></div>
+            <div class="a11y-panel-body">
+                <button class="a11y-btn active" data-mode="standard"><span class="a11y-btn-dot" style="background:linear-gradient(135deg,#6366F1,#8B5CF6)"></span>Modo Estándar</button>
+                <button class="a11y-btn" data-mode="dark"><span class="a11y-btn-dot" style="background:linear-gradient(135deg,#1E293B,#334155)"></span>Modo Oscuro</button>
+                <button class="a11y-btn" data-mode="high-contrast"><span class="a11y-btn-dot" style="background:linear-gradient(135deg,#FBBF24,#F59E0B)"></span>Alto Contraste</button>
+                <button class="a11y-btn" data-mode="low-stimulus"><span class="a11y-btn-dot" style="background:linear-gradient(135deg,#D1D5DB,#9CA3AF)"></span>Baja Estimulación</button>
+                <div class="a11y-divider"></div>
+                <div class="a11y-font-row">
+                    <button class="a11y-font-btn" id="fontDecrease">A−</button>
+                    <span class="a11y-font-label">Texto</span>
+                    <button class="a11y-font-btn" id="fontIncrease">A+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <header class="header">
+        <nav class="nav"><div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-mark"><svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="url(#lg)"/><defs><linearGradient id="lg" x1="0" y1="0" x2="36" y2="36"><stop stop-color="#6366F1"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><rect x="8" y="8" width="8" height="8" rx="2" fill="#fff" opacity=".9"/><rect x="20" y="8" width="8" height="8" rx="2" fill="#fff" opacity=".6"/><rect x="8" y="20" width="8" height="8" rx="2" fill="#fff" opacity=".6"/><rect x="20" y="20" width="8" height="8" rx="2" fill="#fff" opacity=".35"/></svg></div>
+                <span class="logo-text">Lógica<span class="logo-accent">Visual</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="modulos.html" class="nav-link">Módulos</a>
+                <a href="aprender.html" class="nav-link active">Aprender Código</a>
+                <a href="simulador.html" class="nav-link">Simulador</a>
+                <a href="guia.html" class="nav-link">Guía Docente</a>
+                <a href="recursos.html" class="nav-link">Recursos</a>
+            </div>
+        </div></nav>
+    </header>
+
+    <!-- Hero de página -->
+    <section class="page-hero">
+        <div class="particles-container" id="particles"></div>
+        <div class="container">
+            <span class="section-tag">💻 Lecciones Paso a Paso</span>
+            <h1 class="page-hero-title">Aprende a <span class="gradient-text">Escribir Código</span></h1>
+            <p class="page-hero-desc">Haz clic en "Siguiente" y mira cómo se construye el código fragmento a fragmento, con explicaciones sencillas para niños.</p>
+        </div>
+    </section>
+
+    <main id="main-content">
+        <section class="section">
+            <div class="container">
+
+                <!-- Selector de lección -->
+                <div class="lesson-selector" role="tablist" aria-label="Seleccionar lección">
+                    <button class="lesson-tab active" data-lesson="0" role="tab" aria-selected="true">
+                        <span class="lesson-tab-num">1</span>
+                        <span class="lesson-tab-info">
+                            <span class="lesson-tab-title">Hola Mundo</span>
+                            <span class="lesson-tab-desc">Mostrar texto en pantalla</span>
+                        </span>
+                    </button>
+                    <button class="lesson-tab" data-lesson="1" role="tab" aria-selected="false">
+                        <span class="lesson-tab-num">2</span>
+                        <span class="lesson-tab-info">
+                            <span class="lesson-tab-title">Variables</span>
+                            <span class="lesson-tab-desc">Cajas para guardar datos</span>
+                        </span>
+                    </button>
+                    <button class="lesson-tab" data-lesson="2" role="tab" aria-selected="false">
+                        <span class="lesson-tab-num">3</span>
+                        <span class="lesson-tab-info">
+                            <span class="lesson-tab-title">Condicionales</span>
+                            <span class="lesson-tab-desc">Elegir entre SÍ o NO</span>
+                        </span>
+                    </button>
+                    <button class="lesson-tab" data-lesson="3" role="tab" aria-selected="false">
+                        <span class="lesson-tab-num">4</span>
+                        <span class="lesson-tab-info">
+                            <span class="lesson-tab-title">Bucles</span>
+                            <span class="lesson-tab-desc">Repetir muchas veces</span>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Panel de lección -->
+                <div class="lesson-panel gradient-border">
+
+                    <!-- Barra de progreso -->
+                    <div class="lesson-progress-bar">
+                        <div class="lesson-progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <!-- Información de la lección -->
+                    <div class="lesson-header">
+                        <div class="lesson-header-left">
+                            <span class="lesson-badge" id="lessonBadge">Lección 1</span>
+                            <h2 class="lesson-title" id="lessonTitle">Hola Mundo</h2>
+                        </div>
+                        <div class="lesson-step-info">
+                            <span class="lesson-step-label">Paso</span>
+                            <span class="lesson-step-current" id="stepCurrent">1</span>
+                            <span class="lesson-step-total" id="stepTotal">/ 5</span>
+                        </div>
+                    </div>
+
+                    <div class="lesson-body">
+
+                        <!-- Lado izquierdo: Código -->
+                        <div class="lesson-code-area">
+                            <div class="code-window">
+                                <div class="code-window-bar">
+                                    <div class="code-dots"><span></span><span></span><span></span></div>
+                                    <span class="code-filename" id="codeFilename">hola_mundo.py</span>
+                                </div>
+                                <div class="code-content" id="codeContent" aria-live="polite">
+                                    <!-- Las líneas de código se generan con JS -->
+                                </div>
+                            </div>
+
+                            <!-- Console de salida -->
+                            <div class="code-console" id="codeConsole">
+                                <div class="console-bar">
+                                    <span class="console-icon">⬛</span>
+                                    <span>Salida</span>
+                                </div>
+                                <div class="console-output" id="consoleOutput">
+                                    <span class="console-placeholder">La salida aparecerá aquí...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lado derecho: Explicación -->
+                        <div class="lesson-explain-area">
+                            <div class="explain-card" id="explainCard">
+                                <div class="explain-icon" id="explainIcon">💡</div>
+                                <h3 class="explain-title" id="explainTitle">Bienvenido</h3>
+                                <p class="explain-text" id="explainText">Haz clic en "Siguiente" para comenzar a construir tu primer programa.</p>
+                                <div class="explain-highlight" id="explainHighlight">
+                                    <span class="explain-highlight-label">Concepto clave:</span>
+                                    <span class="explain-highlight-text" id="explainConcept">Programa</span>
+                                </div>
+                            </div>
+
+                            <!-- Mini visualización -->
+                            <div class="explain-visual" id="explainVisual">
+                                <div class="visual-blocks" id="visualBlocks">
+                                    <!-- Bloques visuales que se agregan progresivamente -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controles -->
+                    <div class="lesson-controls">
+                        <button class="lesson-btn lesson-btn-prev" id="btnPrev" disabled>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            Anterior
+                        </button>
+                        <div class="lesson-nav-dots" id="navDots"></div>
+                        <button class="lesson-btn lesson-btn-next" id="btnNext">
+                            Siguiente
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                        <button class="lesson-btn lesson-btn-run" id="btnRun" style="display:none">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Ejecutar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mensaje de felicitación (oculto) -->
+                <div class="lesson-complete" id="lessonComplete" style="display:none">
+                    <div class="complete-content gradient-border">
+                        <div class="complete-emoji">🎉</div>
+                        <h2 class="complete-title">¡Lección Completada!</h2>
+                        <p class="complete-text" id="completeText">Has aprendido los conceptos básicos de programación.</p>
+                        <div class="complete-actions">
+                            <button class="lesson-btn lesson-btn-next" id="btnNextLesson">Siguiente Lección →</button>
+                            <button class="lesson-btn lesson-btn-prev" id="btnRestart">🔄 Repetir</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════ VIDEO ═══════ -->
+        <section class="video-section">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">🎬 Video Introductorio</span>
+                    <h2 class="section-title">Antes de Empezar: <span class="gradient-text">Mira Esto</span></h2>
+                    <p class="section-desc">Un video corto para entender los conceptos básicos antes de escribir tu primer código.</p>
+                </div>
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <div class="video-placeholder" style="padding:0;overflow:hidden;">
+                            <iframe src="https://www.youtube.com/embed/VZe9tjqa9xw" title="Programación Conceptos Básicos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:inherit;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="index.html" class="logo"><span class="logo-text">Lógica<span class="logo-accent">Visual</span></span></a><p class="footer-tagline">Plataforma educativa de algoritmos con enfoque neuroinclusivo.</p></div>
+                <div class="footer-col"><h4>Plataforma</h4><a href="index.html">Inicio</a><a href="modulos.html">Módulos</a><a href="aprender.html">Aprender Código</a><a href="simulador.html">Simulador</a><a href="guia.html">Guía Docente</a><a href="recursos.html">Recursos</a></div>
+                <div class="footer-col"><h4>Accesibilidad</h4><a href="#">WCAG</a><a href="#">Privacidad</a><a href="#">Contacto</a></div>
+                <div class="footer-col"><h4>Normativas</h4><a href="#">WCAG 2.1 AAA</a><a href="#">EN 301 549</a></div>
+            </div>
+            <div class="footer-bottom"><p>© 2026 Lógica Visual — Enfoque neuroinclusivo.</p></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="lecciones.js"></script>
+</body>
+</html>
