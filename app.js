@@ -16,6 +16,16 @@
         initScrollReveal();
         initTiltCards();
         initPageTransitions();
+        initFooterTop();
+    }
+
+    /* ─── BOTÓN VOLVER ARRIBA ─── */
+    function initFooterTop(){
+        var btn = document.getElementById('footerTop');
+        if(!btn) return;
+        btn.addEventListener('click', function(){
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 
     /* ─── TILT 3D EN TARJETAS ─── */

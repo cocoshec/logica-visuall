@@ -958,7 +958,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     animation: slideGradient 4s linear infinite;
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-brand { max-width: 320px; }
+.footer-brand { max-width: 340px; }
 .footer-tagline { font-size: .9rem; color: var(--c-text2); margin-top: 1rem; line-height: 1.6; }
 .footer-col { display: flex; flex-direction: column; gap: .625rem; }
 .footer-col h4 {
@@ -967,10 +967,82 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     color: var(--c-text3);
     margin-bottom: .375rem;
 }
-.footer-col a { font-size: .9rem; color: var(--c-text2); font-weight: 500; transition: color .2s; }
-.footer-col a:hover { color: var(--indigo); }
-.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid var(--c-border2); }
+.footer-col a { font-size: .9rem; color: var(--c-text2); font-weight: 500; transition: color .2s, transform .2s; }
+.footer-col a:hover { color: var(--indigo); transform: translateX(4px); }
+.footer-note {
+    margin-top: .5rem; padding: .75rem;
+    background: var(--c-bg3); border-left: 3px solid var(--emerald);
+    border-radius: var(--r-sm);
+    font-size: .75rem; line-height: 1.5; color: var(--c-text3);
+}
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--c-border2); }
 .footer-bottom p { font-size: .8rem; color: var(--c-text3); }
+
+/* ─── BANDA CTA DEL FOOTER ─── */
+.footer-cta {
+    position: relative;
+    padding: 3rem 0;
+    background:
+        radial-gradient(ellipse 60% 120% at 10% 50%, rgba(99,102,241,.18), transparent),
+        radial-gradient(ellipse 60% 120% at 90% 50%, rgba(236,72,153,.14), transparent),
+        var(--c-bg3);
+    border-bottom: 1px solid var(--c-border2);
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+}
+.footer-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--indigo-d), var(--pink), var(--cyan), transparent);
+    background-size: 200% 100%;
+    animation: slideGradient 4s linear infinite;
+}
+.footer-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.footer-cta-text h3 { font-family: var(--font-d); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; }
+.footer-cta-text p { color: var(--c-text2); margin-top: .5rem; font-size: .95rem; max-width: 480px; }
+.footer-cta-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.footer-cta-actions .btn { padding: .875rem 1.75rem; white-space: nowrap; }
+
+/* ─── BADGES + REDES ─── */
+.footer-badges { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+.footer-badge {
+    font-size: .7rem; font-weight: 700;
+    padding: .375rem .75rem;
+    border-radius: var(--r-full);
+    background: var(--c-bg3);
+    border: 1px solid var(--c-border2);
+    color: var(--c-text2);
+    transition: all .25s;
+}
+.footer-badge:hover { border-color: var(--indigo); color: var(--indigo); }
+.footer-social { display: flex; gap: .625rem; margin-top: 1.25rem; }
+.footer-social a {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--c-bg3);
+    border: 1px solid var(--c-border2);
+    color: var(--c-text2);
+    transition: all .3s;
+}
+.footer-social a:hover {
+    background: linear-gradient(135deg, var(--indigo-d), #A855F7);
+    color: #fff; border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ─── BOTÓN VOLVER ARRIBA ─── */
+.footer-top {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem; font-weight: 800;
+    background: linear-gradient(135deg, var(--indigo-d), #A855F7);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(99,102,241,.4);
+    transition: all .3s;
+    flex-shrink: 0;
+}
+.footer-top:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(99,102,241,.6); }
 
 /* ═══════════════════════════════════════════════
    PÁGINAS INTERNAS — SEPARADOR SUPERIOR
@@ -1075,6 +1147,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .challenge-arrow { width: 48px; height: 48px; }
     .video-wrapper { max-width: 100%; }
     .footer-grid { gap: 2rem; }
+    .footer-cta { padding: 2.25rem 0; margin-bottom: 2.5rem; }
+    .footer-cta-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
     .acc-header { padding: 1rem; }
     .acc-header-left { gap: .75rem; }
 }
@@ -1097,6 +1171,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .mod-card-top { flex-direction: column; gap: .75rem; }
     .complete-actions { flex-direction: column; }
     .complete-actions .btn { width: 100%; justify-content: center; }
+    .footer-bottom { flex-direction: column-reverse; text-align: center; gap: 1.25rem; }
+    .footer-cta-actions { width: 100%; }
+    .footer-cta-actions .btn { flex: 1; justify-content: center; }
+    .footer-badges { justify-content: center; }
 }
 @media(max-width: 480px) {
     .logo-text { font-size: 1.05rem; }
